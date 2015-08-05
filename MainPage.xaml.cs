@@ -59,34 +59,34 @@ namespace TagNotificationsWP8
 
         private void IsSubscribed_Click(object sender, RoutedEventArgs e)
         {
-            Boolean Tag1Sub = client.getPush().isTagSubscribed("tag1");
-            Boolean Tag2Sub = client.getPush().isTagSubscribed("tag2");
+            Boolean Tag1Sub = client.getPush().isTagSubscribed("sample-tag1");
+            Boolean Tag2Sub = client.getPush().isTagSubscribed("sample-tag2");
 
-            MessageBox.Show("tag1 : " + Tag1Sub + "\ntag2 : " + Tag2Sub);
+            MessageBox.Show("sample-tag1 : " + Tag1Sub + "\nsample-tag2 : " + Tag2Sub);
         }
 
         private void SubscribeTag1_Click(object sender, RoutedEventArgs e)
         {
             MySubscribeListener SubListener = new MySubscribeListener();
-            client.getPush().subscribeTag("tag1", null, SubListener);
+            client.getPush().subscribeTag("sample-tag1", null, SubListener);
         }
 
         private void SubscribeTag2_Click(object sender, RoutedEventArgs e)
         {
             MySubscribeListener SubListener = new MySubscribeListener();
-            client.getPush().subscribeTag("tag2", null, SubListener);
+            client.getPush().subscribeTag("sample-tag2", null, SubListener);
         }
 
         private void UnsubscribeTag1_Click(object sender, RoutedEventArgs e)
         {
             MyUnsubscribeListener UnsubListener = new MyUnsubscribeListener();
-            client.getPush().unsubscribeTag("tag1", UnsubListener);
+            client.getPush().unsubscribeTag("sample-tag1", UnsubListener);
         }
 
         private void UnsubscribeTag2_Click(object sender, RoutedEventArgs e)
         {
             MyUnsubscribeListener UnsubListener = new MyUnsubscribeListener();
-            client.getPush().unsubscribeTag("tag2", UnsubListener);
+            client.getPush().unsubscribeTag("sample-tag2", UnsubListener);
         }
     }
 }
